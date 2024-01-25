@@ -61,16 +61,16 @@
     position: relative;
     top: 10px;
     right: 4px;
-    color: #000;
+    color: #242424;
     margin: auto;
-    background-color: #eeeeee;
+    background-color: white;
     padding: 0.3em 1em;
-    border: solid 2px;
-    border-radius: 12px;
-    border-color: #00000030;
+    border: solid 1px;
+    border-radius: 3px;
+    border-color: #242424;
     text-decoration: none;
   }
-  
+
   #overlayText svg {
     height: clamp(1em, 2vw, 1.4em);
     width:  clamp(1em, 2vw, 1.4em);
@@ -103,12 +103,11 @@
 </div>
 
 <div class="pdf-paginator" id="pdf-paginator-{{ substr (.Get "url" | md5) 0 8 }}">
-    <button id="pdf-prev-{{ substr (.Get "url" | md5) 0 8 }}">Previous</button>
-    <button id="pdf-next-{{ substr (.Get "url" | md5) 0 8 }}">Next</button> &nbsp; &nbsp;
-    <span>
+    <button class="btn btn-primary button_custom" id="pdf-prev-{{ substr (.Get "url" | md5) 0 8 }}"><i class="fa fa-solid fa-arrow-left"></i>&nbsp&nbsp Prev</button>
+<span>
       <span class="pdf-pagenum" id="pdf-pagenum-{{ substr (.Get "url" | md5) 0 8 }}"></span> / <span class="pdf-pagecount" id="pdf-pagecount-{{ substr (.Get "url" | md5) 0 8 }}"></span>
     </span>
-    <a class="pdf-source" id="pdf-source-{{ substr (.Get "url" | md5) 0 8 }}" href="{{ .Get "url" }}">[pdf]</a>
+    <button class="btn btn-primary button_custom" id="pdf-next-{{ substr (.Get "url" | md5) 0 8 }}">Next&nbsp&nbsp<i class="fa fa-solid fa-arrow-right"></i></button> &nbsp; &nbsp;
 </div>
 
 <noscript>
